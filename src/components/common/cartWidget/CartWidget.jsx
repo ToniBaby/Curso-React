@@ -1,11 +1,12 @@
 import { TbShoppingCartDiscount } from "react-icons/tb";
-
+import { Link } from "react-router-dom";
 const CartWidget = () => {
   return (
-    <div>
-      {/*ACa icono de carrito*/}
-      <TbShoppingCartDiscount />
-    </div>
+    <>
+      <Link to="/cart">
+        <TbShoppingCartDiscount />
+      </Link>
+    </>
   );
 };
 

@@ -1,9 +1,20 @@
-const ItemList = ({ apellido, saludo }) => {
+import ProductCard from "../../common/productCard/ProductCard";
+
+const ItemList = ({ items }) => {
   return (
-    <div>
-      <h1>{apellido}</h1>
-      <h2>{saludo}</h2>
-    </div>
+    <section
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-evenly",
+        flexWrap: "wrap",
+        gap: "20px",
+      }}
+    >
+      {items.map((item) => {
+        return <ProductCard key={item.id} item={item} />;
+      })}
+    </section>
   );
 };
 

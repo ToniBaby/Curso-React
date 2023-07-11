@@ -1,20 +1,25 @@
-import Home from "./components/pages/home/Home";
-import Login from "./components/pages/login/Login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/navbar/Navbar";
+import CartContainer from "./components/pages/cart/CartContainer";
+import ItemDetailContainer from "./components/pages/itemList/itemDetail/ItemDetailContainer";
 import ItemListContainer from "./components/pages/itemList/ItemListContainer";
-import MaterialComponents from "./components/pages/material/MaterialComponents";
-function App() {
-  let nombre = "Tomas";
-  const saludo = "Hola como te va?";
 
+function App() {
   return (
-    <div>
-      <Navbar />
-      <Home nombre={nombre} />
-      <MaterialComponents />
-      <Login />
-      <ItemListContainer saludo={saludo} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Navbar />}>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route
+            path="/category/:categoryName"
+            element={<ItemListContainer />}
+          />
+          <Route path="/cart" element={<CartContainer />} />
+          {<Route path="/itemDetail/:id" element={<ItemDetailContainer />} />}
+          <Route path="*" element={<h1>404 - Not Found</h1>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
