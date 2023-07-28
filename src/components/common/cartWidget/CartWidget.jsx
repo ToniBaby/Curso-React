@@ -1,12 +1,21 @@
-import { TbShoppingCartDiscount } from "react-icons/tb";
+import { Badge } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
+
 const CartWidget = () => {
+  const { getTotalQuantity } = useContext(CartContext);
+
+  let total = getTotalQuantity();
+
   return (
-    <>
-      <Link to="/cart">
-        <TbShoppingCartDiscount />
-      </Link>
-    </>
+    <Link to="/cart" style={{ color: "black" }}>
+      <Badge badgeContent={total} color="primary">
+        <ShoppingCartIcon color="main" sx={{ fontSize: 40 }} />
+      </Badge>
+    </Link>
   );
 };
 

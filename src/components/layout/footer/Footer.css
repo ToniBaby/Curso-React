@@ -1,0 +1,6 @@
+.footerContainer {
+  width: 100%;
+  background-color: burlywood;
+  height: 2em;
+  grid-area: footer;
+}
