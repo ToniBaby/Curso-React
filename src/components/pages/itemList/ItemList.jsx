@@ -4,16 +4,7 @@ import "./ItemList.css";
 const ItemList = ({ items }) => {
   let arr = [1, 2, 3, 4];
   return (
-    <section
-      className="cardContainer"
-      style={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "space-evenly",
-        flexWrap: "wrap",
-        gap: "20px",
-      }}
-    >
+    <section className="cardContainer">
       {items.length > 0
         ? items.map((item) => <ProductCard key={item.id} item={item} />)
         : arr.map((elemento) => (

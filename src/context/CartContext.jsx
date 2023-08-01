@@ -5,7 +5,6 @@ export const CartContext = createContext();
 const CartContextComponent = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  // 5
   const addToCart = (product) => {
     let existe = cart.some((elemento) => elemento.id === product.id);
     if (existe) {
