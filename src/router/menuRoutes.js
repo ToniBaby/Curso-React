@@ -38,7 +38,7 @@ export const routes = [
   {
     id: "checkout",
     path: "/checkout",
-    Element: CheckoutContainer,
+    Element: FormFormik,
   },
   {
     id: "dashboard",

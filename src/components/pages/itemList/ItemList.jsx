@@ -7,7 +7,6 @@ const ItemList = ({ items }) => {
     <section
       className="cardContainer"
       style={{
-        height: "80vh",
         width: "100%",
         display: "flex",
         justifyContent: "space-evenly",

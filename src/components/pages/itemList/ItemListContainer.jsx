@@ -33,7 +33,7 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <h1>Todos los Productos</h1>
+      {/* <h1>Todos los Productos</h1> */}
       {/*  {items.length === 0 ? (
         <CircleLoader color="#36d7b7" />
       ) : (
