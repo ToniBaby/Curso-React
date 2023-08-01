@@ -29,7 +29,6 @@ const FormFormik = () => {
       repet: "", */
     },
     onSubmit: (data) => {
-      console.log(data);
       let order = {
         buyer: data,
         items: cart,
