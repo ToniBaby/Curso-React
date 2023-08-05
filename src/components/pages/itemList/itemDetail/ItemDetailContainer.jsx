@@ -21,6 +21,7 @@ const ItemDetailContainer = () => {
     let refDoc = doc(reffCollection, id);
     getDoc(refDoc).then((res) => setProduct({ ...res.data(), id: res.id }));
   }, [id]);
+
   const agregarAlCarrito = (cantidad) => {
     let data = {
       ...product,
@@ -37,6 +38,7 @@ const ItemDetailContainer = () => {
       imageAlt: "Iujuuuuuu",
     });
   };
+
   return (
     <ItemDetail
       product={product}

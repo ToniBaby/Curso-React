@@ -31,17 +31,7 @@ const ItemListContainer = () => {
     });
   }, [categoryName]);
 
-  return (
-    <>
-      {/* <h1>Todos los Productos</h1> */}
-      {/*  {items.length === 0 ? (
-        <CircleLoader color="#36d7b7" />
-      ) : (
-        <ItemList items={items} />
-      )} */}
-      (<ItemList items={items} />)
-    </>
-  );
+  return <ItemList items={items} />;
 };
 
 export default ItemListContainer;

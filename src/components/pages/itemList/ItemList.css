@@ -1,8 +1,10 @@
 .cardContainer {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  gap: 20px;
-  grid-area: main;
+  display: grid;
+  display: grid;
+  
+
+  grid-template-columns: repeat(auto-fill , minmax(25rem, 1fr));
+  grid-template-rows: minmax(20rem, auto);;
+  
   width: "100%";
 }

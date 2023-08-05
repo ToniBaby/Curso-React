@@ -1,26 +1,47 @@
 .navContainer {
   width: 100%;
-  background-color: burlywood;
-  height: 10vh;
+  background-color: #966e33;
+  height: 7vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   grid-area: navbar;
+  padding: 10px 1%;
 }
 
 .containerCategories {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  gap: 50px;
+  gap: 20px;
 }
 .containerCategories a {
-  background-color: beige;
+  background-color: #966f33;
   padding: 10px 20px;
-  color: #7f669d;
+  color: #461f00;
   width: 100px;
   display: flex;
   justify-content: center;
   border-radius: 10px;
   text-decoration: none;
+  padding: 0.1rem;
+}
+
+.containerCategories a:hover {
+  background-color: #461f00;
+  box-shadow: 0 0 1.4rem #461f00;
+  color: burlywood;
+}
+
+.logo {
+  gap: 100px;
+  font-size: 2rem;
+  color: #461f00;
+  text-decoration: none;
+  text-shadow: 2px 2px rgba(165, 42, 42, 0.062), 1px 1px #461f00;
+  animation: appear 1s 1 linear;
+}
+.logo:hover {
+  transform: scale(1.2);
 }

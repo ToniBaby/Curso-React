@@ -3,8 +3,11 @@ import { createContext, useState } from "react";
 export const CartContext = createContext();
 
 const CartContextComponent = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
 
+  // 5
   const addToCart = (product) => {
     let existe = cart.some((elemento) => elemento.id === product.id);
     if (existe) {
@@ -19,31 +22,37 @@ const CartContextComponent = ({ children }) => {
         }
       });
 
+      localStorage.setItem("cart", JSON.stringify(newArr));
       setCart(newArr);
     } else {
+      localStorage.setItem("cart", JSON.stringify([...cart, product]));
       setCart([...cart, product]);
     }
   };
 
   const clearCart = () => {
+    // localStorage.setItem("cart", JSON.stringify([]))
+    localStorage.removeItem("cart");
     setCart([]);
   };
 
   const deleteById = (id) => {
     let newArr = cart.filter((elemento) => elemento.id !== id);
+    localStorage.setItem("cart", JSON.stringify(newArr));
     setCart(newArr);
   };
 
-  //Funcion que retorna el total de cantidades
-
+  // RETORNE EL TOTAL DE CANTIDADES
   const getTotalQuantity = () => {
     let total = cart.reduce((acc, elemento) => {
       return acc + elemento.quantity;
     }, 0);
+
     return total;
   };
 
-  // Funcion que retorna el total de precios
+  // RETORNE EL TOTAL DEL PRECIO
+
   const getTotalPrice = () => {
     let total = cart.reduce((acc, elemento) => {
       return acc + elemento.price * elemento.quantity;
@@ -51,12 +60,15 @@ const CartContextComponent = ({ children }) => {
     return total;
   };
 
-  //dado un id, saber las cantidad que hay
+  // dado un id, saber las cantidades que hay
+
   const getQuantityById = (id) => {
     let producto = cart.find((elemento) => elemento.id === +id);
+
+    // return producto ? producto.quantity : producto
     return producto?.quantity;
   };
-  //
+
   let data = {
     cart,
     addToCart,

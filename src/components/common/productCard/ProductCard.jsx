@@ -26,7 +26,7 @@ const ProductCard = ({ item }) => {
         </CardContent>
         <CardActions>
           <Link to={`/itemDetail/${item.id}`}>
-            <Button size="small">Ver Detalle</Button>
+            <Button color="success" size="small">Ver Detalle</Button>
           </Link>
         </CardActions>
       </Card>

@@ -11,8 +11,8 @@ const CartWidget = () => {
   let total = getTotalQuantity();
 
   return (
-    <Link to="/cart" style={{ color: "black" }}>
-      <Badge badgeContent={total} color="primary">
+    <Link to="/cart" style={{ color: "#461F00" }}>
+      <Badge badgeContent={total} color="success">
         <ShoppingCartIcon color="main" sx={{ fontSize: 40 }} />
       </Badge>
     </Link>

@@ -1,8 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 
 import Layout from "../components/layout/Layout";
+import Dashboard from "../components/pages/dashboard/Dashboard";
 
 import { routes } from "./menuRoutes";
+import ProtectedRoutes from "./ProtectedRoutes";
 const AppRouter = () => {
   return (
     <Routes>
@@ -10,6 +12,10 @@ const AppRouter = () => {
         {routes.map(({ id, path, Element }) => (
           <Route key={id} path={path} element={<Element />} />
         ))}
+      </Route>
+
+      <Route element={<ProtectedRoutes />}>
+        <Route path="/dashboard" element={<Dashboard />} />
       </Route>
       <Route path="*" element={<h1>404 - Not Found</h1>} />
     </Routes>

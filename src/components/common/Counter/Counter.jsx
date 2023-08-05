@@ -5,6 +5,7 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
     <div>
       <div style={{ display: "flex" }}>
         <Button
+        color="success"
           disabled={counter <= 1}
           variant="contained"
           onClick={() => setCounter(counter - 1)}
@@ -13,6 +14,7 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
         </Button>
         <h2>{counter}</h2>
         <Button
+        color="success"
           disabled={counter >= stock}
           variant="contained"
           onClick={() => setCounter(counter + 1)}
@@ -22,8 +24,9 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
       </div>
       <br />
       <Button
+      
         variant="contained"
-        color="secondary"
+        color="success"
         onClick={() => agregarAlCarrito(counter)}
       >
         Agregar al carrito
